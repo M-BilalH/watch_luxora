@@ -17,17 +17,17 @@ final TextInputAction? textInputAction;
 final FocusNode? focusNode;
 final Widget? prefix;
 final Widget? suffix;
-CustomTextField({this.controller,this.check,this.enable=true,this.focusNode,this.hintText,this.isPassword=false,this.keyboardtype
+const CustomTextField({super.key, this.controller,this.check,this.enable=true,this.focusNode,this.hintText,this.isPassword=false,this.keyboardtype
 ,this.maxline,this.onsave,this.prefix,this.suffix,this.textInputAction,this.validate});
 @override
   Widget build(BuildContext context) {
     return TextFormField(
       enabled: enable==true?true:enable,
-      maxLines:maxline ==null?1:maxline,
+      maxLines:maxline ?? 1,
       onSaved: onsave,
       focusNode: focusNode,
       textInputAction: textInputAction,
-      keyboardType: keyboardtype==null ?TextInputType.name :keyboardtype,
+      keyboardType: keyboardtype ?? TextInputType.name,
       controller: controller,
       validator: validate,
       obscureText: isPassword==false ? false : isPassword,
@@ -38,6 +38,9 @@ CustomTextField({this.controller,this.check,this.enable=true,this.focusNode,this
         fillColor: Colors.grey[200],
         filled: true,
         labelText: hintText??"hint text....",
+        labelStyle: TextStyle(
+          color: Colors.grey
+        ),
          focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide:  BorderSide(
@@ -49,7 +52,7 @@ CustomTextField({this.controller,this.check,this.enable=true,this.focusNode,this
           borderRadius: BorderRadius.circular(10),
           borderSide:  BorderSide(
             style: BorderStyle.solid,
-            color: Color(0xFF909A9e),
+            color: Color.fromARGB(0, 255, 255, 255),
           )
         ),
        

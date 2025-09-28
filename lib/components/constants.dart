@@ -1,12 +1,10 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-Color primaryColor = Color.fromARGB(255, 213, 213, 210);
-Color secondaryColor =Color(0xff664C36);
+Color primaryColor = Color.fromARGB(255, 60, 60, 56);
+Color secondaryColor =Color.fromARGB(255, 123, 111, 101);
 Color tercaryColor =   Color(0xffCCBEB1);
-Color hoverColor =   Color(0xff331C08);
+Color hoverColor =   Color.fromARGB(255, 83, 72, 63);
 
 void goto(BuildContext context, Widget nextScreen) {
   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => nextScreen));

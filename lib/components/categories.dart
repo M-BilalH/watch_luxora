@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watch_luxora/Screens/home/product_screen.dart';
 
 // ignore: must_be_immutable
 class Categories extends StatefulWidget {
@@ -19,12 +20,19 @@ class _CategoriesState extends State<Categories> {
     return Padding(
       padding: const EdgeInsets.only(left: 5,right: 5),
       child: InkWell(
+        onTap: (){
+         Navigator.push(context, MaterialPageRoute(builder: (context)=> Product_Screen(title: widget.title,img: widget.url,)));
+        },
         child: Column(
           children: [
             CircleAvatar(backgroundImage: AssetImage(widget.url),
             radius: 35,
             backgroundColor:widget.color,),
-            Text(widget.title),
+            Text(widget.title,style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey
+            ),),
           ],
         ),
       ),

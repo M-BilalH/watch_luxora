@@ -5,7 +5,7 @@ import 'package:watch_luxora/components/constants.dart';
 class SecondaryButton extends StatelessWidget {
   final String title;
 final Function onPressed;
-  const SecondaryButton({Key? key,required this.title,required this.onPressed}): super(key: key);
+  const SecondaryButton({super.key,required this.title,required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
