@@ -37,7 +37,7 @@ class popular_search extends StatelessWidget {
           fontWeight: FontWeight.w600,
         ),),
         SizedBox(height: 10,),
-        Container(
+        SizedBox(
           height: 150,
           width: MediaQuery.of(context).size.width,
           child: ListView.builder(
@@ -47,7 +47,7 @@ class popular_search extends StatelessWidget {
             itemBuilder: (context,index){
 return Padding(
   padding: const EdgeInsets.all(3.0),
-  child: Container(
+  child: SizedBox(
     width: 120,
     child: Column(
     children: [
