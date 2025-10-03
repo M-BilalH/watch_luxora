@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:watch_luxora/Home_Component/deal_zone.dart';
 import 'package:watch_luxora/Home_Component/exclusice.dart';
 import 'package:watch_luxora/Home_Component/grid_home.dart';
+import 'package:watch_luxora/Screens/account/account_screen.dart';
 import 'package:watch_luxora/Screens/notification/notification_screen.dart';
 import 'package:watch_luxora/Screens/search/search_screen.dart';
 import 'package:watch_luxora/products_list/Category_list.dart';
@@ -12,6 +13,7 @@ import 'package:watch_luxora/components/categories.dart';
 class HomePage extends StatelessWidget {
    
   const HomePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
