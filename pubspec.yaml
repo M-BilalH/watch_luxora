@@ -38,6 +38,7 @@ dependencies:
   flutter_native_splash: ^2.4.6
   google_nav_bar: ^5.0.7
   flutter_launcher_icons: ^0.14.4
+  redacted: ^1.0.13
 flutter_launcher_icons:
   
   android: "launcher_icons"
