@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:watch_luxora/Screens/home_screen.dart';
+import 'package:watch_luxora/Screens/home/home_screen.dart';
+import 'package:watch_luxora/components/bottom_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
        
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomePage(),
+      home: BottomPage(),
     );
   }
 }

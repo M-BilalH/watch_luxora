@@ -4,17 +4,23 @@ import 'package:watch_luxora/Home_Component/deal_zone.dart';
 import 'package:watch_luxora/Home_Component/exclusice.dart';
 import 'package:watch_luxora/Home_Component/grid_home.dart';
 import 'package:watch_luxora/Screens/account/account_screen.dart';
+import 'package:watch_luxora/Screens/cart/cart_screen.dart';
 import 'package:watch_luxora/Screens/notification/notification_screen.dart';
 import 'package:watch_luxora/Screens/search/search_screen.dart';
 import 'package:watch_luxora/products_list/Category_list.dart';
 import 'package:watch_luxora/products_list/product_list.dart';
 import 'package:watch_luxora/components/categories.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
    
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
 
+class _HomePageState extends State<HomePage> {
+  
   @override
   Widget build(BuildContext context) {
     final List<String> bannerImages = [
@@ -48,14 +54,28 @@ class HomePage extends StatelessWidget {
            ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.favorite_outline),
+            child: InkWell(
+              onTap: (){
+                showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        builder: (context) => Account_Sheet(),
+      );
+              },
+              child: Icon(Icons.favorite_outline)),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.shopping_cart),
+            child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart_Screen()));
+              },
+              child: Icon(Icons.shopping_cart)),
           )
         ],
       ),
+      
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -12,7 +12,7 @@ PrimaryButton({super.key, required this.title,required this.onPressed,this.loadi
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 50,
       width: double.infinity,
       child: ElevatedButton(onPressed: (){
         onPressed();
@@ -24,8 +24,8 @@ PrimaryButton({super.key, required this.title,required this.onPressed,this.loadi
         )
       ),
       child: Text(title,style: TextStyle(
-        fontSize: 20,
-        color: Colors.black,
+        fontSize: 15,
+        color: Colors.white,
         fontWeight: FontWeight.bold
       ),),
       ),

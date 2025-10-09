@@ -3,7 +3,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:watch_luxora/Screens/account/account_screen.dart';
 import 'package:watch_luxora/Screens/category/category_screen.dart';
 import 'package:watch_luxora/Screens/home/home_screen.dart';
-import 'package:watch_luxora/Screens/newarrival/new_arrival.dart';
+import 'package:watch_luxora/Screens/home/product_screen.dart';
 import 'package:watch_luxora/components/constants.dart';
 
 
@@ -17,13 +17,13 @@ class BottomPage extends StatefulWidget {
 }
 
 class _BottomPageState extends State<BottomPage> {
-  int current_index =0;
+  int current_index=0;
 
       List<Widget> pages =[
     HomePage(),
     CategoryScreen(),
-    New_Arrival_Screen(),
-    Account_Screen(),
+    Product_Screen(title: "New Arrival",img: "assets/arrival.png",),
+    Container(),
   ];
   //     List<Widget> pagesparent =[
   //   HomeScreen(),
@@ -32,12 +32,29 @@ class _BottomPageState extends State<BottomPage> {
   //   ProfilePage(),
   // ]
   
-   onTapped(int index){
-    setState(() {
-      current_index=index;
-    });
+  //  onTapped(int index){
+  //   setState(() {
+  //     current_index=index;
+  //   });
+  // }
+ void onTapped(int index) {
+    if (index == 3) {
+      // Show bottom sheet for Account
+      showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        builder: (context) => Account_Sheet(),
+      );
+      setState(() {
+        current_index = 0;
+      });
+    } else {
+      setState(() {
+        current_index = index;
+      });
+    }
   }
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,8 +97,9 @@ class _BottomPageState extends State<BottomPage> {
           text: 'Account',
               )
             ],
+            onTabChange: onTapped,
             selectedIndex: current_index,
-          onTabChange: onTapped,
+          
           ),
         ),
       )

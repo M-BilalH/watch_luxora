@@ -52,7 +52,10 @@ class _GridItemState extends State<GridItem> {
            height: 130,
            width: 130,
             color: widget.clr,
-            child: Image.asset(images[_currentIndex],fit: BoxFit.contain,),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(images[_currentIndex],fit: BoxFit.contain,),
+            ),
           ),
           Text(widget.title,style: TextStyle(
             fontSize: 15,
